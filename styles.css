@@ -1,0 +1,233 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: #9f04ad;
+    color: #333;
+}
+
+/* Cabeçalho */
+header {
+    background-color: #3e004b;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 20rem;
+    margin-left: -20px;
+    position: fixed;
+    top: 0;
+    z-index: 10;
+    
+}
+
+/* Menu de navegação */
+
+nav{
+  width: 800px;
+}
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 2rem;
+}
+
+nav ul li {
+    font-weight: 600;
+    cursor: pointer;
+}
+
+nav ul li:hover {
+    text-decoration: underline;
+    color: #9f04ad;
+}
+
+/* Botão login */
+button#btn-login {
+    margin-left: 400px;
+    background-color: transparent;
+    border: 2px solid rgb(255, 0, 0);
+    padding: 0.4rem 1rem;
+    border-radius: 4px;
+    color: rgb(199, 0, 0);  
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+button#btn-login:hover,
+button#btn-login:focus {
+    background-color: rgb(255, 68, 68);
+    color: #004aad;
+    outline: none;
+}
+
+/* Pop-up fundo */
+#popup-bg {
+    position: fixed;
+    inset: 0;
+    background-color: rgba(0,0,0,0.5);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 100;
+    padding: 1rem;
+}
+
+/* Pop-up container */
+#popup {
+    background: rgb(100, 2, 109);
+    border-radius: 8px;
+    width: 100%;
+    max-width: 360px;
+    box-shadow: 0 8px 18px rgba(0,0,0,0.25);
+    position: relative;
+    padding: 2rem 2rem 1.5rem 2rem;
+    animation: popin 0.3s ease forwards;
+}
+
+@keyframes popin {
+    from {
+        opacity: 0;
+        transform: translateY(-30px) scale(0.95);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+      }
+    }
+  
+    /* Botão fechar "X" */
+    #popup-close {
+      position: absolute;
+      top: 12px;
+      right: 12px;
+      background: none;
+      border: none;
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: #000000;
+      cursor: pointer;
+      transition: color 0.2s ease;
+    }
+    #popup-close:hover,
+    #popup-close:focus {
+      color: #ffffff;
+      outline: none;
+    }
+  
+    /* Formulário */
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+  
+    label {
+      font-weight: 600;
+      color: #ff0000;
+      font-size: 0.9rem;
+    }
+  
+    input[type="email"],
+    input[type="password"] {
+      padding: 0.6rem 0.75rem;
+      font-size: 1rem;
+      border: 1.8px solid #ccc;
+      border-radius: 6px;
+      transition: border-color 0.25s ease;
+    }
+    input[type="email"].invalid,
+    input[type="password"].invalid {
+      border-color: #e55353; /* vermelho */
+      box-shadow: 0 0 5px #e5535377;
+    }
+  
+    input[type="email"]:focus,
+    input[type="password"]:focus {
+      outline: none;
+      border-color: #004aad;
+      box-shadow: 0 0 5px #004aad77;
+    }
+  
+    /* Botões do pop-up */
+    .buttons {
+      display: flex;
+      justify-content: space-between;
+      gap: 0.5rem;
+      margin-top: 0.5rem;
+    }
+    .buttons button {
+      flex: 1;
+      padding: 0.6rem 0;
+      border-radius: 6px;
+      border: none;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background-color 0.25s ease;
+      font-size: 0.95rem;
+    }
+    .buttons button:disabled {
+      cursor: default;
+      opacity: 0.5;
+    }
+    .buttons button:nth-child(1) {
+      background-color: #6c757d; /* cinza */
+      color: white;
+    }
+    .buttons button:nth-child(1):hover:enabled,
+    .buttons button:nth-child(1):focus:enabled {
+      background-color: #5a6268;
+      outline: none;
+    }
+    .buttons button:nth-child(2) {
+      background-color: #004aad; /* azul */
+      color: white;
+    }
+    .buttons button:nth-child(2):hover:enabled,
+    .buttons button:nth-child(2):focus:enabled {
+      background-color: #00337f;
+      outline: none;
+    }
+    .buttons button:nth-child(3) {
+      background-color: transparent;
+      border: 2px solid #004aad;
+      color: #004aad;
+    }
+    .buttons button:nth-child(3):hover:enabled,
+    .buttons button:nth-child(3):focus:enabled {
+      background-color: #004aad;
+      color: white;
+      outline: none;
+    }
+  
+    /* Responsividade e ajuste para mobile */
+    @media (max-width: 400px) {
+      header {
+        padding: 1rem;
+        flex-wrap: wrap;
+        gap: 1rem;
+      }
+      nav ul {
+        gap: 1rem;
+        flex-wrap: wrap;
+        justify-content: center;
+        width: 100%;
+        order: 1;
+      }
+      button#btn-login {
+        order: 2;
+        width: 100%;
+        max-width: 150px;
+        align-self: center;
+      }
+      #popup {
+        width: 100%;
+        max-width: 320px;
+        padding: 1.5rem 1.5rem 1rem 1.5rem;
+      }
+    }

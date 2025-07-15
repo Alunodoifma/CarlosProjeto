@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header class="he">
+    <nav>
+        <ul>
+            <a style="color: white;text-decoration: none;" href="index.html"><li tabindex="0">INÍCIO</li></a>
+            <li tabindex="0">PRODUTOS</li>
+            <a style="color: white;text-decoration: none;" href="client.html"><li  tabindex="0">CADASTRAR CLIENTE</li></a>
+            <a style="color: white;text-decoration: none;" href="cad.html"><li  tabindex="0">CADASTRAR PRODUTOS</li></a>
+            <li tabindex="0">CONTATO</li>
+            <li tabindex="0">SOBRE</li>
+        </ul>
+    </nav>
+    <button id="btn-login" aria-haspopup="dialog" aria-controls="popup" aria-expanded="false">Login</button>
+</header>
+
+<div id="popup-bg" role="dialog" aria-modal="true" aria-labelledby="popup-title" tabindex="-1">
+    <div id="popup">
+        <button id="popup-close" aria-label="Fechar pop-up login">&times;</button>
+        <h2 id="popup-title" style="text-align:center; font-weight:700; font-size:1.3rem; margin-bottom:1rem; color: #004aad;">Login</h2>
+        <form>
+            <label for="email">Email</label>
+            <input type="email" id="email" autocomplete="username" placeholder="Digite seu email" required />
+            <label for="password">Senha</label>
+            <input type="password" id="password" autocomplete="current-password" placeholder="Digite sua senha" required />
+            <div class="buttons">
+                <button type="button" id="btn-cadastrar" disabled>Cadastrar</button>
+                <button type="submit" id="btn-login-form" disabled>Login</button>
+                <button type="button" id="btn-recuperar-senha" disabled>Recuperar senha</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+
+
+    <div class="container" style="background-color: #7c0a10;">
+        <h1 style="color: rgb(255, 255, 255);">CADASTRAR CLIENTES</h1>
+            <input type="text" id="nome" placeholder="NOME" required>
+            <input type="text" id="idade" placeholder="IDADE" required>
+            <input type="text" id="numero" placeholder="NUMERO DE TELEFONE" required>
+            <input type="text" id="cpf" placeholder="CPF" required>
+            <input type="text" id="cep" placeholder="CEP" required>
+            <input id="cadastrarCliente" type="submit" value="Cadastrar Cliente" >
+    </div>
+    <div class="container" style="background-color: #7c0a10;">
+        <h1 style="color: rgb(255, 255, 255);">BUSCAR E ATUALIZAR CLIENTES</h1>
+            <input type="text" id="idCliente" placeholder="INSIRA O NOME DO CLIENTE" required>
+            <input id="buscarCliente" type="submit" value="Procurar Cliente" style="background-color: #b868ff;">
+
+            <input type="text" id="dadoNome" placeholder="NOME">
+            <input type="text" id="dadoIdade" placeholder="IDADE">
+            <input type="text" id="dadoNumero" placeholder="NUMERO DE TELEFONE">
+            <input type="text" id="dadoCPF" placeholder="CPF">
+            <input type="text" id="dadoCEP" placeholder="CEP">
+            <input id="atualizarCliente" type="submit" value="Atualizar Cliente" style="background-color: #48a35c;">
+            
+            <input id="deletarCliente" type="submit" value="Deletar Cliente" style="background-color: #c53634;">
+    </div>
+
+<script type="module" src="script.js"></script>
+<script type="module" src="script3.js"></script>
+
+    
+</body>
+</html>

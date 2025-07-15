@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+    
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Loja Tech</title>
+    <link rel="stylesheet" href="styles.css"/>
+    
+</head>
+<body>
+<header class="header">
+    <nav>
+        <ul>
+            <a style="color: white;text-decoration: none;" href="index.html"><li tabindex="0">INÍCIO</li></a>
+            <li tabindex="0">PRODUTOS</li>
+            <a style="color: white;text-decoration: none;" href="client.html"><li  tabindex="0">CADASTRAR CLIENTE</li></a>
+            <a style="color: white;text-decoration: none;" href="cad.html"><li  tabindex="0">CADASTRAR PRODUTOS</li></a>
+            <li tabindex="0">CONTATO</li>
+            <li tabindex="0">SOBRE</li>
+        </ul>
+    </nav>
+    <button id="btn-login" aria-haspopup="dialog" aria-controls="popup" aria-expanded="false">Login</button>
+</header>
+
+<div id="popup-bg" role="dialog" aria-modal="true" aria-labelledby="popup-title" tabindex="-1">
+    <div id="popup">
+        <button id="popup-close" aria-label="Fechar pop-up login">&times;</button>
+        <h2 id="popup-title" style="text-align:center; font-weight:700; font-size:1.3rem; margin-bottom:1rem; color: #004aad;">Login</h2>
+        <form>
+            <label for="email">Email</label>
+            <input type="email" id="email" autocomplete="username" placeholder="Digite seu email" required />
+            <label for="password">Senha</label>
+            <input type="password" id="password" autocomplete="current-password" placeholder="Digite sua senha" required />
+            <div class="buttons">
+                <button type="button" id="btn-cadastrar" disabled>Cadastrar</button>
+                <button type="submit" id="btn-login-form" disabled>Login</button>
+                <button type="button" id="btn-recuperar-senha" disabled>Recuperar senha</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+<script type="module" src="script.js"></script>
+</body>
+</html>
